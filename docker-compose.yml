@@ -1,29 +1,20 @@
-version: "3.8"
+version: "3.9"
 
 services:
   backend:
     build:
       context: ./Backend
-      dockerfile: Dockerfile
-    environment:
-      - PYTHONUNBUFFERED=1
     volumes:
-      - ./Backend/taroproject:/app
-      - ./Backend/taroproject/media:/app/media
-    ports:
-      - "8000:8000"
+      - ./Backend/taroproject:/app/taroproject
+      - ./Backend/taroproject/media:/app/taroproject/media
     networks:
       - app-network
 
   frontend:
     build:
       context: ./Frontend
-      dockerfile: Dockerfile
     volumes:
       - ./Frontend/vue-taro:/app
-
-    ports:
-      - "8080:80"
     networks:
       - app-network
 
