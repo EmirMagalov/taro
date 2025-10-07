@@ -10,7 +10,7 @@ django.setup()
 
 from taroapp.models import TaroCard
 
-BASE_DIR = r"taro"
+BASE_DIR = r"taro_data"
 storage = S3Boto3Storage()  # используем явный storage
 
 def read_file(path):
