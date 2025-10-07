@@ -89,7 +89,7 @@ const flipCard = (index) => {
     // показать лицевую
 
     if (cardObj) {
-      currentCards[index] = currentCards[index] = 'https://flexado.xyz/media/photo/card_a6db59.jpg'
+      currentCards[index] = currentCards[index] = `https://flexado.xyz/media/${cardObj.img.name}`
       flipped[index] = true
 
       // добавить только если такого объекта еще нет
