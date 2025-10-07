@@ -16,8 +16,7 @@ var/
 *.py[cod]
 
 # Django
-*.sqlite3
-db.sqlite3
+
 
 staticfiles/
 *.mo
