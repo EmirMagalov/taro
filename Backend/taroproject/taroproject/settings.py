@@ -31,6 +31,13 @@ ALLOWED_HOSTS = ["*", "localhost", "127.0.0.1", "host.docker.internal"]
 CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://flexado.xyz",
+    "https://flexado.xyz",
+]
+
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +49,9 @@ INSTALLED_APPS = [
     'taroapp',
     'rest_framework'
 ]
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,6 +138,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-
