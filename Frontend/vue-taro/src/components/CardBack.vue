@@ -89,7 +89,7 @@ const flipCard = (index) => {
     // показать лицевую
 
     if (cardObj) {
-      currentCards[index] = cardObj.img
+      currentCards[index] = cardObj.img.replace(/^http:/, 'https:')
       flipped[index] = true
 
       // добавить только если такого объекта еще нет
