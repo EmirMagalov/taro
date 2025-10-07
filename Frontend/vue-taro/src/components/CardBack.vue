@@ -89,7 +89,8 @@ const flipCard = (index) => {
     // показать лицевую
 
     if (cardObj) {
-      currentCards[index] = cardObj.img.replace(/^http:/, 'https:')
+      currentCards[index] = `https://media.flexado.xyz/${cardObj.filename}`
+
       flipped[index] = true
 
       // добавить только если такого объекта еще нет

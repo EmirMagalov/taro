@@ -71,7 +71,11 @@ const returnCards = () => {
           :key="card.id"
           class="flex flex-col items-center cursor-pointer"
         >
-          <img :src="card.img.replace(/^http:/, 'https:')" class="w-15 lg:w-15 xl:w-30" alt="" />
+          <img
+            :src="`https://media.flexado.xyz/${card.filename}`"
+            class="w-15 lg:w-15 xl:w-30"
+            alt=""
+          />
           <p class="text-center font-bold text-[6px] xl:text-base text-[#f4c901]">
             {{ card.name }}
           </p>

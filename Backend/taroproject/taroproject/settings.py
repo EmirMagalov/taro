@@ -45,12 +45,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'corsheaders',
     'taroapp',
     'rest_framework'
 ]
 
 
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = '31ae3e83767639314ecefba8fb11f8cd'
+AWS_SECRET_ACCESS_KEY = '7e5af4b56b025efd9ad738a62cc2235ee844fde8c9a5084f0315fd1295669b0e'
+AWS_STORAGE_BUCKET_NAME = 'taro-media'
+AWS_S3_ENDPOINT_URL = 'https://d08f8d3932145958fc992ee55e17daf2.r2.cloudflarestorage.com'
+AWS_S3_REGION_NAME = 'auto'
+AWS_QUERYSTRING_AUTH = False  # файлы будут публичными
+MEDIA_URL = f"https://d08f8d3932145958fc992ee55e17daf2.r2.cloudflarestorage.com/{AWS_STORAGE_BUCKET_NAME}/"
 
 
 MIDDLEWARE = [
@@ -135,6 +145,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # <-- сюда будет соб
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-MEDIA_URL='/media/'
+#
+# MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
