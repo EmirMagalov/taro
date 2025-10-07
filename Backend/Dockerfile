@@ -1,12 +1,12 @@
-# Backend/Dockerfile
-FROM python:3.12
+FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY Backend/requirements.txt .
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY Backend/taroproject /app/taroproject
-COPY Backend/taroapp /app/taroapp
+COPY . /app
+
+EXPOSE 8000
 
 CMD ["gunicorn", "taroproject.wsgi:application", "--bind", "0.0.0.0:8000"]
