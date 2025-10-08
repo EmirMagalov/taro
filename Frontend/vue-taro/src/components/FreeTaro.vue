@@ -28,7 +28,7 @@ onMounted(getData)
 
 // Выбор случайной карты
 const selectCard = () => {
-  if (selectCardsList.value.length >= 16) return
+  if (selectCardsList.value.length >= 9) return
 
   if (taroItems.value.length === 0) {
     console.log('Все карты уже на столе')
@@ -63,7 +63,7 @@ const returnCards = () => {
 
       <!-- Выбранные карты -->
       <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-cols-4 gap-1"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 grid grid-cols-3 gap-1"
       >
         <div
           @click="selectCardsText = card"
@@ -76,7 +76,7 @@ const returnCards = () => {
             class="w-15 lg:w-15 xl:w-30"
             alt=""
           />
-          <p class="text-center font-bold text-[6px] xl:text-base text-[#f4c901]">
+          <p class="text-shadow-md text-shadow-black text-center font-bold text-[10px] xl:text-base text-[#f4c901]">
             {{ card.name }}
           </p>
         </div>
