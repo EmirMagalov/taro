@@ -17,8 +17,8 @@ services:
 
   frontend:
     build:
-      context: ./Frontend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Frontend/Dockerfile
     volumes:
       - ./Frontend/vue-taro:/app
 
