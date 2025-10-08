@@ -14,18 +14,18 @@ services:
       - "8000:8000"
     networks:
       - app-network
-#
-#  frontend:
-#    build:
-#      context: ./Frontend
-#      dockerfile: Dockerfile
-#    volumes:
-#      - ./Frontend/vue-taro:/app
-#
-#    ports:
-#      - "8080:80"
-#    networks:
-#      - app-network
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./Frontend/vue-taro:/app
+
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
 
 networks:
   app-network:
