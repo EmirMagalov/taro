@@ -8,7 +8,7 @@ RUN npm run build
 ## Стадия сервера
 FROM nginx:alpine
 COPY --from=0 /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY taro/nginx.conf /etc/nginx/nginx.conf
 
 
 
