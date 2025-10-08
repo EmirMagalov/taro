@@ -1,4 +1,3 @@
-# Сборка Vue
 FROM node:20 AS build
 WORKDIR /app
 COPY vue-taro/package*.json ./
@@ -6,8 +5,9 @@ RUN npm install
 COPY vue-taro/ .
 RUN npm run build
 
-# Nginx для продакшена
+## Стадия сервера
 FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=0 /app/dist /usr/share/nginx/html
+COPY flexado /etc/nginx/conf.d/flexado.conf
+
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
