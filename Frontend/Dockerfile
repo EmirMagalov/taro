@@ -1,9 +1,17 @@
 # Сборка Vue
 FROM node:20 AS build
 WORKDIR /app
-COPY Frontend/package*.json ./
+
+# Копируем package.json и package-lock.json
+COPY Frontend/vue-taro/package*.json ./
+
+# Устанавливаем зависимости
 RUN npm install
-COPY Frontend/ .
+
+# Копируем все исходники
+COPY Frontend/vue-taro/ .
+
+# Собираем проект
 RUN npm run build
 
 # Сервер Nginx
